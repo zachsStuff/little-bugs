@@ -1,0 +1,8 @@
+{
+    "bug count":20,
+    "max bugs":300,
+    "hunger max":100,
+    "enemies":4,
+    "max enemies":20,
+    "sight distance":40
+}
