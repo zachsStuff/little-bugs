@@ -3,6 +3,7 @@ import json
 
 #idk if i should put this in a function but who cares
 with open("config.json","r") as cfg:
+#this may not work at points for somereason, but hopefully its working right now
 
     data=json.load(cfg)
 
