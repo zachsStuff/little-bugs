@@ -18,6 +18,7 @@ bugArray={}
 enemieArray={}
 speed=1
 running=3
+ratSpeed=2
 
 def bugINIT():
     global bugArray
@@ -72,8 +73,12 @@ while running:
             
             
     for rat in enemieArray:
+        Enothing=board(enemieArray[rat][0][0],enemieArray[rat][0][1],ratSpeed)
         pygame.draw.circle(screen, (255,55,0),(enemieArray[rat][0][0],enemieArray[rat][0][1]),5)
         
+        if not Enothing==None:
+            
+            enemieArray[rat][0]=Enothing
     pygame.display.flip()
     dt = clock.tick(60) / 1000
 pygame.quit()
