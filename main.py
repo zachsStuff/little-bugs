@@ -19,38 +19,41 @@ enemieArray={}
 speed=1
 running=3
 ratSpeed=2
+with open("config.json","r") as cfg:
+#this may not work at points for somereason, but hopefully its working right now
 
-def bugINIT():
-    global bugArray
+    data=json.load(cfg)
+def bugINIT(arr,data):
+    #global bugArray
     
-    maxBugs=loadInt("bug count")
+    maxBugs=loadInt("bug count",data)
     b=0
     stopReloading=False
     if not stopReloading:
-      for i in range(loadInt("bug count")+1):
-        if i in bugArray:
+      for i in range(loadInt("bug count",data)+1):
+        if i in arr:
             b+=1
             if b==20:
                 break        
         else:    
-            bugArray[i]=[randomStartPos(X,Y),0,loadFloat("hunger max"),loadInt("sight distance"),3]
-            print("bug made ::",bugArray[i])
-def enemyINIT():
-    global enemieArray
+            arr[i]=[randomStartPos(X,Y),0,loadFloat("hunger max",data),loadInt("sight distance",data),3]
+            print("bug made ::",arr[i])
+def enemyINIT(arr,data):
     
-    maxBugs=loadInt("enemies")
+    
+    maxBugs=loadInt("enemies",data)
     b=0
     stopReloading=False
     if not stopReloading:
-      for i in range(loadInt("enemies")+1):
-        if i in enemieArray:
+      for i in range(loadInt("enemies",data)+1):
+        if i in arr:
             b+=1
             if b==20:
                 break
         else:                 
-            enemieArray[i]=[randomStartPos(X,Y),0,loadFloat("hunger max"),loadInt("sight distance")]
+            arr[i]=[randomStartPos(X,Y),0,loadFloat("hunger max",data),loadInt("sight distance",data)]
             #ill work on states later, but for now 0=board/satifyed
-            print("rat made ::",enemieArray[i])
+            print("rat made ::",arr[i])
         
 
 while running:
@@ -60,8 +63,8 @@ while running:
             running = False
     screen.fill((23,200,24))
 
-    bugINIT()
-    enemyINIT()
+    bugINIT(bugArray,data)
+    enemyINIT(enemieArray,data)
     
     for bug in bugArray:
         nothing=board(bugArray[bug][0][0],bugArray[bug][0][1],speed)
