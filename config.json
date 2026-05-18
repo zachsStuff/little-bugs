@@ -1,12 +1,14 @@
 {
-    "bug count":20,
+    "bug count":200,
     "max bugs":300,
     "hunger max":100.00,
+    "hunger loss walk":0.66,
+    "hunger loss run":1.4,
     "enemies":4,
     "enemy sight":14,
     "max enemies":20,
     "sight distance":12,
     "start crumbs":30,
-    " max crumbs":1200,
+    "max crumbs":1200,
     "crumbs update":4
 }

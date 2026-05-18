@@ -16,7 +16,9 @@ dt=0
 bugStart=40
 bugArray={}
 enemieArray={}
-speed=5
+speed=1
+running=3
+
 def bugINIT():
     global bugArray
     
@@ -59,15 +61,17 @@ while running:
 
     bugINIT()
     enemyINIT()
-
+    
     for bug in bugArray:
-        pygame.draw.circle(screen, (0,55,255),(bugArray[bug][0][0],bugArray[bug][0][1]),3)
         nothing=board(bugArray[bug][0][0],bugArray[bug][0][1],speed)
+        print("\n",nothing,"\n")
+        print(bugArray[bug][0][0],"||||",bugArray[bug])
+        pygame.draw.circle(screen, (0,55,255),(bugArray[bug][0][0],bugArray[bug][0][1]),3)
+        
         if not nothing==None:
-            if nothing[1]=="x":
-                bugArray[bug][0]=nothing[0]
-            else:
-                bugArray[bug][0]=nothing[0]
+            
+            bugArray[bug][0]=nothing
+            
             
     for rat in enemieArray:
         pygame.draw.circle(screen, (255,55,0),(enemieArray[rat][0][0],enemieArray[rat][0][1]),5)

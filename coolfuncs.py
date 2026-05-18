@@ -3,13 +3,15 @@ import random
 import pygame
 X=1400
 Y=700
+direction=0
 def board(x,y,speed):
     global X
     global Y
+    global direction
     dosomething=random.randint(0,101)
-    canChangeDir=random.randint(0,16)
-    changeDir=random.randint(0,3)
-    direction=0
+    canChangeDir=random.randint(0,21)
+    changeDir=random.randint(0,4)
+    
     #return [x+speed,y],"x"
     if x<0:
         direction=0
@@ -19,14 +21,21 @@ def board(x,y,speed):
         direction=2
     if y>Y:
         direction=3    
-    if canChangeDir>5:
+    if canChangeDir<16:
         direction=changeDir
-    if dosomething>85:
+    if dosomething>79:
         if direction==0:
-            return [x+speed,y],"x"
+            return [x+speed,y]
+
         if direction==1:
-            return [x-speed,y],"x"
+            print("\n\n\nlalal\n\n\n")
+            return [x,y+speed]
+            
+            
         if direction==2:
-            return [x,y+speed],"y"
+            return [x-speed,y]
+
         if direction==3:
-            return [x,y-speed],"y"
+            print("\n\n\nlalal\n\n\n")
+            return [x,y-speed]
+            
