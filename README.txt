@@ -1,4 +1,4 @@
-      |--->Zachs presents<----|
+      |->ZachsStuff presents<-|
       ||=====================||
       ||this is a game where ||
       ||you watch a bunch of ||
