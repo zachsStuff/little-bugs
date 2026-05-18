@@ -6,7 +6,7 @@ import pygame
 pygame.init()
 X=1400
 Y=700
-pygame.display.set_icon(pygame.image.load('little bugs\\rsrc\\little bugs ICON.png'))
+pygame.display.set_icon(pygame.image.load('rsrc\little bugs ICON.png'))
 screen = pygame.display.set_mode((X,Y))
 
 pygame.display.set_caption("little bugs")
