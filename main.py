@@ -64,8 +64,6 @@ while running:
     
     for bug in bugArray:
         nothing=board(bugArray[bug][0][0],bugArray[bug][0][1],speed)
-        print("\n",nothing,"\n")
-        print(bugArray[bug][0][0],"||||",bugArray[bug])
         pygame.draw.circle(screen, (0,55,255),(bugArray[bug][0][0],bugArray[bug][0][1]),3)
         
         if not nothing==None:

@@ -4,7 +4,9 @@ import pygame
 X=1400
 Y=700
 direction=0
-def board(x,y,speed):
+def board(x,y,speed):  
+
+
     global X
     global Y
     global direction
@@ -21,14 +23,13 @@ def board(x,y,speed):
         direction=2
     if y>Y:
         direction=3    
-    if canChangeDir<16:
+    if canChangeDir>19:
         direction=changeDir
     if dosomething>79:
         if direction==0:
             return [x+speed,y]
 
         if direction==1:
-            print("\n\n\nlalal\n\n\n")
             return [x,y+speed]
             
             
@@ -36,6 +37,7 @@ def board(x,y,speed):
             return [x-speed,y]
 
         if direction==3:
-            print("\n\n\nlalal\n\n\n")
             return [x,y-speed]
-            
+
+def hunting():
+    pass
