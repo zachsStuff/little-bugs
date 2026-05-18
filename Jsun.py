@@ -2,7 +2,8 @@
 import json
 
 #idk if i should put this in a function but who cares
-with open("little bugs\config.json","r") as cfg:
+with open("config.json","r") as cfg:
+
     data=json.load(cfg)
 
 def load(name: str):
