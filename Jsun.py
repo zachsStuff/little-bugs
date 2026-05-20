@@ -14,7 +14,7 @@ def loadFloat(name:str,data):
     
     return float(data[name])
 def loadInt(name:str,data):
-    print("shit",data[name],type(data[name]))
+    
     return int(data[name])
 
 

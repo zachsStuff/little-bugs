@@ -1,0 +1,18 @@
+these are the states that will be added.
+0:board:added
+    in the board state, they move randomly and check for 
+    food
+1:running:
+    in the running state, bugs will try to flee from a rat.
+    in this state, they run away and use double their food storage
+2:hungry/searching:
+    in the hungry state, the bugs will go towards food they see and eat.
+    this is the most relaxed state, speed is half, and vision is
+    doubled.
+3:horny:
+    in the horny state, they look for other bugs and nut in them relentlessly, until they
+    get hungry.
+4:sleeping:
+    in this state, they do nothing, and it happens every couple minutes
+5:death:
+    when dead... like what do i even say

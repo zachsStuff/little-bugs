@@ -18,7 +18,7 @@ bugArray={}
 enemieArray={}
 speed=1
 running=3
-ratSpeed=2
+ratSpeed=3
 with open("config.json","r") as cfg:
 #this may not work at points for somereason, but hopefully its working right now
 
@@ -36,7 +36,7 @@ def bugINIT(arr,data):
             if b==20:
                 break        
         else:    
-            arr[i]=[randomStartPos(X,Y),0,loadFloat("hunger max",data),loadInt("sight distance",data),3]
+            arr[i]=[randomStartPos(X,Y),0,loadFloat("hunger max",data),loadInt("sight distance",data),loadInt("bug size",data)]
             print("bug made ::",arr[i])
 def enemyINIT(arr,data):
     
@@ -51,7 +51,7 @@ def enemyINIT(arr,data):
             if b==20:
                 break
         else:                 
-            arr[i]=[randomStartPos(X,Y),0,loadFloat("hunger max",data),loadInt("sight distance",data)]
+            arr[i]=[randomStartPos(X,Y),0,loadFloat("hunger max",data),loadInt("sight distance",data),loadInt("rat size",data)]
             #ill work on states later, but for now 0=board/satifyed
             print("rat made ::",arr[i])
         
@@ -67,16 +67,24 @@ while running:
     enemyINIT(enemieArray,data)
     
     for bug in bugArray:
-        nothing=board(bugArray[bug][0][0],bugArray[bug][0][1],speed)
+        bugs=bugArray[bug]
+        nothing=board(bugArray[bug][0][0],bugArray[bug][0][1],speed,bugArray[bug][1])
         pygame.draw.circle(screen, (0,55,255),(bugArray[bug][0][0],bugArray[bug][0][1]),3)
         
-        if not nothing==None:
+        for rat in enemieArray:
+            enemy=enemieArray[rat]
+
+            if colide(enemy[0][0],enemy[0][1],enemy[4],bugs[0][0],bugs[0][1],bugs[3]):
+                #this checks if a bug sees a rat and then sets them to run mode(1)
+                bugs[1]=1
+        if bugArray[bug][1]==0:
+          if not nothing==None:
             
             bugArray[bug][0]=nothing
-            
+        
             
     for rat in enemieArray:
-        Enothing=board(enemieArray[rat][0][0],enemieArray[rat][0][1],ratSpeed)
+        Enothing=board(enemieArray[rat][0][0],enemieArray[rat][0][1],ratSpeed,enemieArray[rat][1])
         pygame.draw.circle(screen, (255,55,0),(enemieArray[rat][0][0],enemieArray[rat][0][1]),5)
         
         if not Enothing==None:

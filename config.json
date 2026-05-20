@@ -1,5 +1,5 @@
 {
-    "bug count":25,
+    "bug count":500,
     "max bugs":300,
     "hunger max":100.00,
     "hunger loss walk":0.66,
@@ -10,5 +10,7 @@
     "sight distance":12,
     "start crumbs":30,
     "max crumbs":1200,
-    "crumbs update":4
+    "crumbs update":4,
+    "bug size":2,
+    "rat size":4
 }

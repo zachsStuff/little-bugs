@@ -1,14 +1,17 @@
 import lamefuncs
 import random
 import pygame
+#this is for stuff like the state 
+#of an NPC and crap like that
 X=1400
 Y=700
 direction=0
-def board(x,y,speed):  
+def board(x,y,speed,state):  
 
-
+    
     global X
-    global Y
+    global Y#i know i said i removed all globals, 
+    #butttttt.......
     global direction
     dosomething=random.randint(0,101)
     canChangeDir=random.randint(0,21)
@@ -39,5 +42,10 @@ def board(x,y,speed):
         if direction==3:
             return [x,y-speed]
 
-def hunting():
+
+
+
+def hunting(selfPos,targetPos):#for rats only
+    pass
+def running():
     pass
